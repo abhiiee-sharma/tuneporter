@@ -131,6 +131,16 @@ app.post('/convert', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 4000;
+
+app.get('/', (req, res) => {
+  res.send('Welcome to TunePorter! Please use the appropriate API endpoints.');
+});
+
+// Catch-all for undefined routes
+app.use((req, res) => {
+  res.status(404).json({ error: 'Endpoint not found' });
+});
+
 app.listen(PORT, () => {
   console.log(`[Server] Server running on port ${PORT}`);
   console.log('[Server] Environment:', process.env.NODE_ENV || 'development');
