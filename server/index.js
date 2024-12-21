@@ -37,7 +37,7 @@ app.get('/login', (req, res) => {
 });
 
 // Handle Spotify callback
-app.get('/callback', async (req, res) => {
+app.get('/spotify/callback', async (req, res) => {
   console.log('[Server] Callback request received');
   try {
     const { code } = req.query;
