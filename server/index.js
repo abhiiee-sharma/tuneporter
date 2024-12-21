@@ -29,7 +29,7 @@ app.use(express.json());
 console.log('[Server] Middleware configured');
 
 // Get Spotify login URL
-app.get('/login', (req, res) => {
+app.get('/spotify/login', (req, res) => {
   console.log('[Server] Login request received');
   const authUrl = spotifyService.getAuthUrl();
   console.log('[Server] Generated auth URL:', authUrl);
